@@ -9,7 +9,7 @@ steps:
     username: admin
     password:
       from_secret: REGISTRY_PASWORD
-    repo: foo/bar
+    repo: registry.138.199.171.38.nip.io/foo/bar
     tags: latest
     insecure: true
     insecure-registry: true
