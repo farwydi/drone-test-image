@@ -21,6 +21,7 @@ steps:
   environment:
     DOCKER_HOST: unix:///run/podman/podman.sock
   commands:
+  - ls -la /run/podman/podman.sock
   - cd /opt/app
   - docker compose pull
   - docker compose up -d
