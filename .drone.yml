@@ -18,6 +18,8 @@ steps:
   volumes:
   - name: app
     path: /opt/app
+  - name: podman
+    path: /run/podman/podman.sock
   environment:
     DOCKER_HOST: unix:///run/podman/podman.sock
   commands:
