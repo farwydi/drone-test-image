@@ -7,6 +7,7 @@ steps:
   settings:
     registry: http://registry.138.199.171.38.nip.io/
     username: admin
-    password: ${REGISTRY_PASWORD}
+    password:
+      from_secret: REGISTRY_PASWORD
     repo: foo/bar
     tags: latest
