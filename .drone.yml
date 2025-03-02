@@ -24,8 +24,9 @@ steps:
     DOCKER_HOST: unix:///run/podman/podman.sock
   commands:
   - cd /opt/app
-  - docker compose pull
-  - docker compose up -d
+  - docker login registry.138.199.171.38.nip.io
+  - docker pull registry.138.199.171.38.nip.io/foo/bar
+  - docker compose restart test -d
 volumes:
 - name: app
   host:
