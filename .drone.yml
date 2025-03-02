@@ -19,7 +19,7 @@ steps:
   - name: app
     path: /opt/app
   environment:
-    DOCKER_HOST: /run/podman/podman.sock
+    DOCKER_HOST: unix:///run/podman/podman.sock
   commands:
   - cd /opt/app
   - docker compose pull
