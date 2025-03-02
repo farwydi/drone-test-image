@@ -31,5 +31,3 @@ volumes:
 - name: podman
   host:
     path: /run/podman/podman.sock
-  host:
-    path: /opt/app
