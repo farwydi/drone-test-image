@@ -27,6 +27,7 @@ steps:
   commands:
   - cd /opt/app
   - echo $REGISTRY_PASWORD | docker login registry.138.199.171.38.nip.io -u admin --password-stdin
+  - echo '{"insecure-registries":["registry.138.199.171.38.nip.io"]}' > /etc/docker/daemon.json
   - docker pull registry.138.199.171.38.nip.io/foo/bar
   - docker compose restart test -d
 volumes:
