@@ -12,3 +12,5 @@ steps:
     repo: foo/bar
     tags: latest
     insecure: true
+    insecure-registry: true
+    skip-default-registry-fallback: true
