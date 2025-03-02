@@ -5,11 +5,11 @@ steps:
 - name: kaniko
   image: plugins/kaniko
   settings:
-    registry: registry.138.199.171.38.nip.io
+    registry: registry:5000
     username: admin
     password:
       from_secret: REGISTRY_PASWORD
-    repo: registry.138.199.171.38.nip.io/foo/bar
+    repo: registry:5000/foo/bar
     tags: latest
     insecure: true
     insecure-registry: true
