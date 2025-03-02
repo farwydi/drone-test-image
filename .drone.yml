@@ -22,9 +22,11 @@ steps:
     path: /run/podman/podman.sock
   environment:
     DOCKER_HOST: unix:///run/podman/podman.sock
+    REGISTRY_PASWORD:
+      from_secret: REGISTRY_PASWORD
   commands:
   - cd /opt/app
-  - docker login registry.138.199.171.38.nip.io
+  - echo $REGISTRY_PASWORD | docker login registry.138.199.171.38.nip.io -u admin --password-stdin
   - docker pull registry.138.199.171.38.nip.io/foo/bar
   - docker compose restart test -d
 volumes:
