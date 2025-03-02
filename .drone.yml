@@ -5,7 +5,8 @@ steps:
 - name: kaniko
   image: plugins/kaniko
   settings:
-    username: kevinbacon
-    password: pa55word
+    registry: http://registry.138.199.171.38.nip.io/
+    username: admin
+    password: ${REGISTRY_PASWORD}
     repo: foo/bar
     tags: latest
