@@ -5,7 +5,7 @@ steps:
 - name: kaniko
   image: plugins/kaniko
   settings:
-    registry: http://registry.138.199.171.38.nip.io/v2/
+    registry: registry.138.199.171.38.nip.io
     username: admin
     password:
       from_secret: REGISTRY_PASWORD
