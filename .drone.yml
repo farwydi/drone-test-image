@@ -24,3 +24,7 @@ steps:
   - pwd
   - docker compose pull
   - docker compose up -d
+volumes:
+- name: app
+  host:
+    path: /opt/app
