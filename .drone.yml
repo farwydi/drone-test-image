@@ -11,3 +11,4 @@ steps:
       from_secret: REGISTRY_PASWORD
     repo: foo/bar
     tags: latest
+    insecure: true
