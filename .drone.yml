@@ -23,4 +23,6 @@ steps:
   - name: app
     path: /opt/app
   commands:
+  - ls -la
+  - pwd
   - docker compose up -d
