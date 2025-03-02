@@ -18,13 +18,18 @@ steps:
   volumes:
   - name: app
     path: /opt/app
+  environment:
+    DOCKER_HOST: /run/podman/podman.sock
   commands:
   - cd /opt/app
-  - ls -la
-  - pwd
   - docker compose pull
   - docker compose up -d
 volumes:
 - name: app
+  host:
+    path: /opt/app
+- name: podman
+  host:
+    path: /run/podman/podman.sock
   host:
     path: /opt/app
