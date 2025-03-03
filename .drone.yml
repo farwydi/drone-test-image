@@ -24,11 +24,12 @@ steps:
     DOCKER_HOST: unix:///run/podman/podman.sock
     REGISTRY_PASWORD:
       from_secret: REGISTRY_PASWORD
+    DOCKER_CONTENT_TRUST: "1"
   commands:
   - cd /opt/app
   - mkdir -vp /etc/docker
-  - echo '{"insecure-registries":["registry.138.199.171.38.nip.io"]}' > /etc/docker/daemon.json
-  - echo $REGISTRY_PASWORD | docker login registry.138.199.171.38.nip.io -u admin --password-stdin
+  - echo '{"insecure-registries":["http://registry.138.199.171.38.nip.io"]}' > /etc/docker/daemon.json
+  - echo $REGISTRY_PASWORD | docker login http://registry.138.199.171.38.nip.io -u admin --password-stdin
   - docker pull registry.138.199.171.38.nip.io/foo/bar
   - docker compose restart test -d
 volumes:
